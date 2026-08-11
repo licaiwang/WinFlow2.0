@@ -1,0 +1,28 @@
+{
+  "flow_name": "example",
+  "poll_interval": 20,
+  "stages": [
+    {
+      "name": "stage_1",
+      "tasks": [
+        {
+          "name": "task_1",
+          "jobs": [
+            {
+              "name": "Q_CTS",
+              "command": "./example_flow/Q_CTS.csh",
+              "queue": "normal",
+              "cpu": 1,
+              "inputs": [
+                "example_flow/out/CTS.done"
+              ],
+              "outputs": [
+                "example_flow/out/Q_CTS.done"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

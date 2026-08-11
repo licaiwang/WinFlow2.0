@@ -1,0 +1,141 @@
+{
+  "flow_name": "ithome",
+  "poll_interval": 20,
+  "stages": [
+    {
+      "name": "IT_1",
+      "tasks": [
+        {
+          "name": "IT_1",
+          "jobs": [
+            {
+              "name": "IT_1",
+              "command": "./ithome_flow/IT_1.csh",
+              "queue": "normal",
+              "cpu": 1,
+              "inputs": [],
+              "outputs": [
+                "ithome_flow/out/IT_1.done"
+              ],
+              "parents": [],
+              "children": [
+                "IT_3/IT_3/IT_3"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IT_2",
+      "tasks": [
+        {
+          "name": "IT_2",
+          "jobs": [
+            {
+              "name": "IT_2",
+              "command": "./ithome_flow/IT_2.csh",
+              "queue": "normal",
+              "cpu": 1,
+              "inputs": [],
+              "outputs": [
+                "ithome_flow/out/IT_2.done"
+              ],
+              "parents": [],
+              "children": [
+                "IT4/IT4/IT4"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IT_3",
+      "tasks": [
+        {
+          "name": "IT_3",
+          "jobs": [
+            {
+              "name": "IT_3",
+              "command": "./ithome_flow/IT_3.csh",
+              "queue": "normal",
+              "cpu": 1,
+              "inputs": [
+                "ithome_flow/out/IT_1.done"
+              ],
+              "outputs": [
+                "ithome_flow/out/IT_3.done"
+              ],
+              "parents": [
+                "IT_1/IT_1/IT_1"
+              ],
+              "children": [
+                "IT4/IT4/IT4",
+                "IT_5/IT_5/IT_5"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IT4",
+      "tasks": [
+        {
+          "name": "IT4",
+          "jobs": [
+            {
+              "name": "IT4",
+              "command": "./ithome_flow/IT4.csh",
+              "queue": "normal",
+              "cpu": 1,
+              "inputs": [
+                "ithome_flow/out/IT_3.done",
+                "ithome_flow/out/IT_2.done"
+              ],
+              "outputs": [
+                "ithome_flow/out/IT4.done"
+              ],
+              "parents": [
+                "IT_3/IT_3/IT_3",
+                "IT_2/IT_2/IT_2"
+              ],
+              "children": [
+                "IT_5/IT_5/IT_5"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IT_5",
+      "tasks": [
+        {
+          "name": "IT_5",
+          "jobs": [
+            {
+              "name": "IT_5",
+              "command": "./ithome_flow/IT_5.csh",
+              "queue": "normal",
+              "cpu": 1,
+              "inputs": [
+                "ithome_flow/out/IT_3.done",
+                "ithome_flow/out/IT4.done"
+              ],
+              "outputs": [
+                "ithome_flow/out/IT_5.done"
+              ],
+              "parents": [
+                "IT_3/IT_3/IT_3",
+                "IT4/IT4/IT4"
+              ],
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "flow_name": "example",
+  "poll_interval": 20,
+  "stages": [
+    {
+      "name": "stage_1",
+      "tasks": [
+        {
+          "name": "task_1",
+          "jobs": [
+            {
+              "name": "Q_PLACE",
+              "command": "./example_flow/Q_PLACE.csh",
+              "queue": "normal",
+              "cpu": 1,
+              "inputs": [
+                "example_flow/out/PLACE.done"
+              ],
+              "outputs": [
+                "example_flow/out/Q_PLACE.done"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

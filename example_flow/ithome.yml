@@ -1,0 +1,9 @@
+FLOW_NAME:"ithome"
+CPU:
+  - IT_1:4
+	- IT_2:4  
+	- IT_3:4
+	- IT_4:8 
+	- IT_5:16 
+IT_2_LIST:[subblock_A,subblock_B,subblock_C]
+USE_IT_5:false

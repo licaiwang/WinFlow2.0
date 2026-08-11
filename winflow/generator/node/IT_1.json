@@ -1,0 +1,26 @@
+{
+  "flow_name": "ithome",
+  "poll_interval": 20,
+  "stages": [
+    {
+      "name": "IT_1",
+      "tasks": [
+        {
+          "name": "IT_1",
+          "jobs": [
+            {
+              "name": "IT_1",
+              "command": "./ithome_flow/IT_1.csh",
+              "queue": "normal",
+              "cpu": 1,
+              "inputs": [],
+              "outputs": [
+                "ithome_flow/out/IT_1.done"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

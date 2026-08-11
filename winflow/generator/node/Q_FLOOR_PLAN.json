@@ -1,0 +1,28 @@
+{
+  "flow_name": "example",
+  "poll_interval": 20,
+  "stages": [
+    {
+      "name": "stage_1",
+      "tasks": [
+        {
+          "name": "task_1",
+          "jobs": [
+            {
+              "name": "Q_FLOOR_PLAN",
+              "command": "./example_flow/Q_FLOOR_PLAN.csh",
+              "queue": "normal",
+              "cpu": 1,
+              "inputs": [
+                "example_flow/out/FLOOR_PLAN.done"
+              ],
+              "outputs": [
+                "example_flow/out/Q_FLOOR_PLAN.done"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

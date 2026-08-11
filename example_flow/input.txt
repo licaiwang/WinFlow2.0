@@ -1,0 +1,3 @@
+design: demo_chip
+revision: 1.0
+note: sample input for the WinFlow example flow

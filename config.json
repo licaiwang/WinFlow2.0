@@ -1,0 +1,55 @@
+{
+  "runner": {
+    "default_flow_file": "flow.json",
+    "session_log_dir": "logs",
+    "session_log_file": "logs/flow_runner.log",
+    "job_log_dir": "log",
+    "poll_interval": 20,
+    "default_queue": "normal",
+    "default_cpu": 4,
+    "logger_name": "FlowRunner",
+    "kill_poll_ms": 15000,
+    "kill_max_retries": 4,
+    "log_tail_interval_sec": 0.5,
+    "job_log_view_lines": 100,
+    "thread_join_timeout_sec": 1.0,
+    "log_viewer": "gvim",
+    "auto_load_delay_ms": 150
+  },
+  "lsf": {
+    "bsub": "bsub",
+    "bjobs": "bjobs",
+    "bkill": "bkill",
+    "bjobs_noheader": true,
+    "bjobs_output_field": "stat",
+    "job_name_timestamp_format": "%Y%m%d_%H%M%S"
+  },
+  "generator": {
+    "default_flow_type": "example",
+    "default_setting_file": "example_flow/setting.sh",
+    "default_blocks_file": "block_stream.list",
+    "default_output_file": "flow.json",
+    "poll_interval": 20,
+    "default_queue": "normal",
+    "default_cpu": 1,
+    "blank_flow_name": "custom_flow",
+    "new_job_cpu": 1
+  },
+  "example": {
+    "flow_name": "example",
+    "main_stages": ["FLOOR_PLAN", "PLACE", "CTS", "ROUTE"],
+    "quality_prefix": "Q_",
+    "script_dir": "example_flow",
+    "out_dir": "example_flow/out",
+    "command_template": "./{script_dir}/{job_name}.csh",
+    "output_template": "{out_dir}/{job_name}.done",
+    "default_queue": "normal",
+    "default_cpu": "1"
+  },
+  "gui": {
+    "generator_window_size": "1280x800",
+    "generator_window_min": "960x640",
+    "runner_window_size": "1280x820",
+    "sidebar_min_width": 220
+  }
+}

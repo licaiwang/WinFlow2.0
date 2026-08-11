@@ -1,0 +1,27 @@
+# WinFlow 2.0 — Python standard library only (no pip packages).
+# Requires: Python 3.9.2 or newer (Tkinter for GUIs).
+#
+# Install nothing via pip. Run with:
+#   python winflow_gui.py
+#   python -m winflow
+#   python -m winflow.runner flow.json
+#   python -m winflow.generator --flow example -o flow.json
+
+
+
+"jobs": [
+  {
+    "name": "IT_1",
+    "command": "./ithome_flow/IT_1.csh",
+    "queue": "normal",
+    "cpu": 1,
+    "inputs": [],
+    "outputs": [
+      "ithome_flow/out/IT_1.done"
+    ],
+    "parents": [],
+    "children": [
+      "IT_3/IT_3/IT_3"
+    ]
+  }
+]
